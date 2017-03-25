@@ -4,5 +4,5 @@
 import React, {Component, PropTypes} from 'react';
 
 export default function StatelessComponent(props) {
-  return (<div>Try to start edit.</div>)
+  return (<div>Type in text and click Add button.</div>)
 };

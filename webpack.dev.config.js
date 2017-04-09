@@ -17,7 +17,8 @@ module.exports = {
   module: {
     rules: [
       {test: /\.(js|jsx)$/, loader: "babel-loader"},
-      {test: /\.html$/, loader: "file-loader?name=[name].[ext]"}
+      {test: /\.html$/, loader: "file-loader?name=[name].[ext]"},
+      {test: /\.scss$/, loader: ['style-loader', 'css-loader', 'sass-loader']}
     ]
   },
   resolve: {

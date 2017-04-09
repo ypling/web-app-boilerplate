@@ -2,6 +2,7 @@
  * Created by leonardli on 3/24/17.
  */
 import "./index.html";
+import "./app/styles/index.scss";
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './app/App';
@@ -14,7 +15,7 @@ const render = Component => {
     </AppContainer>,
     document.getElementById('react-app')
   )
-}
+};
 
 render(App);
 

@@ -3,9 +3,12 @@
  */
 import React, {Component, PropTypes} from 'react';
 import {Provider} from 'react-redux';
-import store from './store';
+import store, {history} from './store';
 import ExampleList from './components/ExampleList';
 import StatelessComponent from './components/StatelessComponent';
+import {Route} from 'react-router'
+import {ConnectedRouter} from 'react-router-redux';
+
 class App extends Component {
   constructor(props, context) {
     super(props, context);
@@ -15,10 +18,12 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <div>
-          <ExampleList/>
-          <StatelessComponent/>
-        </div>
+        <ConnectedRouter history={history}>
+          <div>
+            <Route exact path="/" component={ExampleList}/>
+            <Route path="/about" component={StatelessComponent}/>
+          </div>
+        </ConnectedRouter>
       </Provider>
     )
   }
